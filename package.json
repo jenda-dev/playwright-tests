@@ -1,0 +1,21 @@
+{
+  "name": "skillmea-playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "allTests": "playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^22.1.0",
+    "allure-commandline": "^2.38.1",
+    "allure-playwright": "^3.6.0"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.2"
+  }
+}

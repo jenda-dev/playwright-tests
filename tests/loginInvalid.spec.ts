@@ -7,8 +7,7 @@ test('Successful login', async ({ page }) => {
     await loginPage.enterValidUsername();
     await loginPage.enterValidPassword();
     await loginPage.clickLoginButton();
-
-   await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
+    await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
 });
 
 test('Cannot login with valid username and invalid password', async ({ page }) => {

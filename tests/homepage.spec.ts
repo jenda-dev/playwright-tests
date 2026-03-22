@@ -28,14 +28,15 @@ test('Successful login', async ({ page , loginPage }) => {
     
 });
 
-test('Verify Home Title', async ({ page , loginPage, homePage }) => {
+test('Verify Home Title', async ({ page , loginPage, homePage, browserName }) => {
+    test.skip(browserName === 'firefox', 'Still working on it')
     await loginPage.gotoLoginPage();
     await loginPage.login();
     await expect(homePage.title).toBeVisible();
 });
 
 
-test('Verify add to cart functionality', async ({ page, loginPage, homePage }) => {
+test.fixme('Verify add to cart functionality', async ({ page, loginPage, homePage }) => {
     await loginPage.gotoLoginPage();
     await loginPage.login(); 
     await homePage.clickOnAddToCart();

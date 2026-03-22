@@ -5,14 +5,14 @@ test.describe('Alerts', () => {
         await page.goto('https://demoqa.com/alerts');
     })
 
-test.only('Simple alert', async ({ page }) => {
+test('Simple alert', async ({ page }) => {
     page.on("dialog", async dialog => {
         await dialog.accept();
     })
     await page.locator('#alertButton').click();
 });
 
-test.only('Confirm alert', async ({ page }) => {
+test('Confirm alert', async ({ page }) => {
     page.on("dialog", async dialog => {
         await dialog.dismiss();
     })
@@ -20,7 +20,7 @@ test.only('Confirm alert', async ({ page }) => {
     await expect(page.locator('#confirmResult')).toHaveText('You selected Cancel');
 });
 
-test.only('Promt alert', async ({ page }) => {
+test('Promt alert', async ({ page }) => {
     page.on("dialog", async dialog => {
         await dialog.accept('Skillmea');
     })

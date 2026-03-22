@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
- test.only('Assertions', async ({ page }) => {
+ test('Assertions', async ({ page }) => {
   await page.goto('http://www.saucedemo.com');
 //assertions// 
 await expect (page.locator('#user-name')).toBeVisible();

@@ -1,4 +1,6 @@
 import test, { expect } from '../fixtures/basePages';
+import { LoginPage } from '../fixtures/page-objects/LoginPage';
+import {HomePage} from "./page-objects/HomePage"
 
 test.describe('Alerts', () => {
     test.beforeEach(async ({ page }) => {
@@ -28,7 +30,17 @@ test('Promt alert', async ({ page }) => {
     await expect(page.locator('#promptResult')).toHaveText('You entered Skillmea');
 });
 
-test('Simple alert 1', async ({ page , loginPage, homePage, browserName }) => {
+test('Simple alert 1', async ({ loginPage, homePage, browserName, page }) => {
+    test.skip(browserName === 'firefox', 'Still working on it')
+    await loginPage.gotoLoginPage();
+    await loginPage.login();
+    await expect(homePage.title).toBeVisible();
+});
+
+test('Simple alert 2', async ({ page, browserName }) => {
+    const homePage = new HomePage(page)
+    const loginPage = new LoginPage(page)
+    
     test.skip(browserName === 'firefox', 'Still working on it')
     await loginPage.gotoLoginPage();
     await loginPage.login();

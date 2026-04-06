@@ -1,6 +1,9 @@
 import { Locator, Page } from '@playwright/test';
 
 export class LoginPage {
+    static gotoLoginPage() {
+        throw new Error('Method not implemented.');
+    }
 page: Page;
 userNameInput: Locator;
 passwordInput: Locator;
